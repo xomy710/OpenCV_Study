@@ -13,7 +13,10 @@ if src is None:
 print('src.shape:', src.shape) # src.shape: (480, 640, 3)
 print('src.dtype:', src.dtype) # src.dtype: uint8
 
-planes = cv2.split(src)
+src_hsv = cv2.cvtColor(src, cv2.COLOR_BGR2HSV)
+#planes = cv2.split(src)
+planes = cv2.split(src_hsv)
+
 
 cv2.imshow('src', src)
 cv2.imshow('planes[0]', planes[0])
