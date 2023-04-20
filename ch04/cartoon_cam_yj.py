@@ -9,6 +9,8 @@ def cartoon_filter(img):
     edge = 255 - cv2.Canny(img, 50, 120)
     edge = cv2.cvtColor(edge, cv2.COLOR_GRAY2BGR)
 
+    ##밝기 값을 이용한 더하기 연산자
+
     dst = cv2.bitwise_and(blr, edge)
     dst = cv2.resize(dst, (w,h), interpolation = cv2.INTER_NEAREST)
     return dst
